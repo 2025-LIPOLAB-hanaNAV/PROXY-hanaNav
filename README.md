@@ -31,7 +31,7 @@ python main.py
 
 또는 uvicorn으로 직접 실행:
 ```bash
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn main:app --host 0.0.0.0 --port 3500 --reload
 ```
 
 ## API 엔드포인트
@@ -42,7 +42,7 @@ uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
 ## 환경 변수
 
-- `RAGFLOW_BASE_URL`: RAGFlow 서버 URL (기본값: http://zipbuntu.iptime.org)
+- `RAGFLOW_BASE_URL`: RAGFlow 서버 URL (기본값: 18080/9380)
 - `RAGFLOW_API_KEY`: RAGFlow API 키
-- `PII_GUARD_URL`: PII Guard 서버 URL (기본값: http://localhost:3000)
-- `PORT`: 프록시 서버 포트 (기본값: 8000)
+- `PII_GUARD_URL`: PII Guard 서버 URL (기본값: http://localhost:3010)
+- `PORT`: 프록시 서버 포트 (기본값: 3500)
