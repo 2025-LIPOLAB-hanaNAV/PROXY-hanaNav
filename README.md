@@ -1,4 +1,4 @@
-# JUNI Proxy Server
+# hanaNav Proxy Server
 
 FastAPI 기반 프록시 서버로 CORS 오류를 해결하고 PII Guard와 RAGFlow API를 중계합니다.
 
