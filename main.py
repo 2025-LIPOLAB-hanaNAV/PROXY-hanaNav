@@ -12,11 +12,11 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI(title="JUNI Proxy Server", version="1.0.0")
 
-# CORS 설정
+# CORS 설정 - 모든 도메인 허용 (프로덕션에서는 보안상 제한 필요)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8080", "http://127.0.0.1:8080", "http://localhost:3000", "http://127.0.0.1:3000"],
-    allow_credentials=True,
+    allow_origins=["*"],  # 모든 origin 허용
+    allow_credentials=False,  # credentials는 모든 origin 허용시 False로 설정
     allow_methods=["*"],
     allow_headers=["*"],
 )
