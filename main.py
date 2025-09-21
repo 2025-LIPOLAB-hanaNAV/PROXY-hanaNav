@@ -131,15 +131,14 @@ async def ragflow_proxy(path: str, request: Request):
             if header_name in request.headers:
                 headers[header_name] = request.headers[header_name]
 
-        async with httpx.AsyncClient() as client:
+        async with httpx.AsyncClient(timeout=httpx.Timeout(600.0, connect=60.0)) as client:
             response = await client.request(
                 method=request.method,
                 url=f"{RAGFLOW_BASE_URL}/api/{path}",
                 json=body if isinstance(body, (dict, list)) else None,
                 content=body if isinstance(body, bytes) else None,
                 params=query_params,
-                headers=headers,
-                timeout=300.0  # 5분으로 증가
+                headers=headers
             )
 
             # RAGFlow 응답 처리
